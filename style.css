@@ -14,7 +14,8 @@
   --green:     #266e50;   /* primary brand / actions */
   --green-dk:  #113a2c;   /* deep green, dark sections */
   --teal:      #1e747e;
-  --gold:      #e8aa30;   /* accent, the "take action" pop */
+  --gold:      #e8aa30;   /* accent, the "take action" pop - graphics + dark bg only */
+  --gold-deep: #8a6200;   /* gold TEXT on light backgrounds (AA: 5.4:1). Never use #e8aa30 as text on white/tint. */
   --gold-ink:  #1a2622;
 
   /* spacing scale (4/8 based) */
@@ -104,6 +105,8 @@ h3 { font-size: 1.2rem; }
 .btn-green { background: var(--green); color: #fff; }
 .btn-green:hover { background: var(--green-dk); }
 .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn-secondary { background: var(--surface); color: var(--green); border-color: var(--green); }   /* outline button for light backgrounds */
+.btn-secondary:hover { background: var(--tint); }
 .nav .btn { padding: .5rem .95rem; }
 
 /* --- hero --- */
@@ -248,4 +251,108 @@ input:focus, textarea:focus { outline: 2px solid var(--green); outline-offset: 1
   .nav-menu .nav-links a { padding: .7rem; color: var(--ink); }
   .nav-menu .nav-links a:hover { background: var(--tint); color: var(--green-dk); }
   .nav-menu .btn { justify-content: center; }
+}
+
+
+/* ============================================================
+   Round 2 (2026-07-10): gold-deep text, card micro-interactions,
+   reveal-on-scroll, areas Dark Anchor, news TOC, faq disclosure,
+   how-we-win accents, footer gold. Motion is transform/opacity only;
+   reduced-motion fallbacks reset to a visible resting state.
+   ============================================================ */
+
+/* --- press feedback: works on tap, every device --- */
+.btn { transition: transform .1s ease, filter .15s ease, background .15s ease; }
+.btn:active { transform: scale(.97); }
+.card { transition: box-shadow .15s ease, transform .15s ease; }
+.card:active { transform: scale(.985); }
+
+/* --- reveal-on-scroll (one shared helper, driven by nav.js) ---
+   Hidden state is scoped to .js (added by nav.js) so that with JS off the
+   content is never hidden. Reduced-motion also resets it below. */
+.js .reveal { opacity: 0; transform: translateY(12px); transition: opacity .35s ease, transform .35s ease; transition-delay: calc(var(--i, 0) * 70ms); }
+.js .reveal.visible { opacity: 1; transform: none; }
+
+/* --- interactive card: lift + gold accent rail + press --- */
+.card--lift { position: relative; overflow: hidden; }
+.card--lift::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: var(--gold); transform: scaleY(0); transform-origin: top;
+  transition: transform .2s ease;
+}
+.card--lift:active { transform: scale(.97); }
+.card--lift .card-num { position: relative; overflow: hidden; }
+.card--lift .card-num::after {
+  content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: skewX(-18deg);
+}
+@media (hover: hover) {
+  .card--lift:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(17,58,44,.16); }
+  .card--lift:hover::before { transform: scaleY(1); }
+  .card--lift:hover .card-num::after { transition: left .5s ease; left: 140%; }
+}
+
+/* --- areas.html: Variant B "Dark Anchor" --- */
+.areas-band {
+  background: linear-gradient(160deg, var(--green-dk), #1a5a41); color: #fff;
+  padding: var(--s6) 0 calc(var(--s7) + var(--s5));
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+.areas-band h1 { color: #fff; }
+.areas-band .lead { color: #d8e5df; }
+.areas-band .tablist { margin-block: var(--s4) 0; }
+.areas-band .tab { background: transparent; color: #fff; border-color: rgba(255,255,255,.55); }
+.areas-band .tab[aria-selected="true"] { background: var(--gold); color: var(--gold-ink); border-color: var(--gold); }
+.areas-lift { margin-top: calc(-1 * var(--s7)); position: relative; z-index: 1; }
+.areas-lift .panel { box-shadow: 0 14px 34px rgba(17,58,44,.18); }
+.area-chips { display: flex; gap: var(--s3); flex-wrap: wrap; }
+.area-chip { background: var(--green-dk); border-radius: 10px; padding: .6rem 1rem; text-align: center; flex: 1; min-width: 8rem; }
+.area-chip b { display: block; font-size: 1.6rem; color: var(--gold); line-height: 1.15; }
+.area-chip span { color: #d8e5df; font-size: .8rem; font-weight: 600; }
+.gold-q { color: var(--gold-deep); font-weight: 900; }
+
+/* --- news.html: table-of-contents pills --- */
+.toc { display: flex; flex-wrap: wrap; gap: var(--s2); margin: var(--s4) 0 var(--s2); padding: 0; list-style: none; }
+.toc a { display: inline-block; background: var(--tint); color: var(--green); font-weight: 700; font-size: .82rem; padding: .35rem .8rem; border-radius: 20px; text-decoration: none; }
+.toc a:hover { background: var(--green); color: #fff; }
+.toc a[aria-current="true"] { background: var(--green); color: #fff; }
+.news-sec { scroll-margin-top: 5.5rem; }
+
+/* --- how-we-win.html: gold accents on the "limit it" cards --- */
+.section--gold-top { border-top: 4px solid var(--gold); }
+.limit-cards .card { border-top: 3px solid var(--gold); }
+.limit-cards .card h3::after {
+  content: ""; display: block; width: 2rem; height: 3px; background: var(--gold);
+  margin-top: .45rem; border-radius: 2px;
+}
+
+/* --- faq.html: gold-when-open + rotating +/x marker + smooth open --- */
+summary { list-style: none; position: relative; padding-right: 2rem; }
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  font-size: 1.5rem; font-weight: 400; line-height: 1; color: var(--green);
+  transition: transform .15s ease, color .15s ease;
+}
+details[open] > summary { color: var(--gold-deep); }
+details[open] > summary::after { transform: translateY(-50%) rotate(45deg); color: var(--gold-deep); }
+.faq-ans { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .22s ease; }
+details[open] .faq-ans { grid-template-rows: 1fr; }
+.faq-ans-inner { overflow: hidden; }
+.faq-ans-inner p { padding-bottom: var(--s3); margin: 0; }
+
+/* --- index.html: gold stat numbers on light cards (use deep gold for AA) --- */
+.stats--gold .stat b { color: var(--gold-deep); }
+
+/* --- footer gold accents (shared footer, all pages) --- */
+.site-footer .foot-brand span { color: var(--gold); }
+.site-footer .foot-col-head { color: var(--gold); }
+
+/* --- reduced-motion safety net: never leave revealed content hidden --- */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .card--lift::before { transform: scaleY(1); }
+  .faq-ans { grid-template-rows: 1fr; }
+  .card--lift .card-num::after { display: none; }
 }

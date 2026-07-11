@@ -8,8 +8,10 @@
   <meta property="og:title" content="In the News - Keep the Northwoods FLOCK Free">
   <meta property="og:description" content="Don't take our word for it. The receipts, from news outlets and civil-liberties groups.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="og-card.png">
+  <meta property="og:image" content="https://northwoodsflockfree.com/og-card.png">
+  <meta property="og:url" content="https://northwoodsflockfree.com/news.html">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://northwoodsflockfree.com/news.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700;900&family=Lato:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -43,9 +45,20 @@
         <h1>In the news</h1>
         <p class="lead" style="margin-top:var(--s3)">Real reporting on what these systems do. Don't take our word for it. Every link below is to a news outlet, a court filing, or a civil-liberties group.</p>
 
+        <ul class="toc" aria-label="Jump to a section">
+          <li><a href="#wrongful-stops">Wrongful stops and arrests</a></li>
+          <li><a href="#officer-misuse">Officer misuse</a></li>
+          <li><a href="#ice-abortion">Shared with ICE and abortion seekers</a></li>
+          <li><a href="#legal-challenges">Legal challenges</a></li>
+          <li><a href="#mission-creep">Mission creep and breaches</a></li>
+          <li><a href="#credibility">Flock's credibility</a></li>
+          <li><a href="#movement-winning">The movement is winning</a></li>
+          <li><a href="#at-home">Right here at home</a></li>
+        </ul>
+
         <div class="cards" style="grid-template-columns:1fr;margin-top:var(--s5)">
 
-          <div class="card resource-card">
+          <div class="card resource-card news-sec" id="wrongful-stops">
             <h2>Wrongful stops and arrests</h2>
             <ul>
               <li><a href="https://ij.org/dozens-of-innocent-motorists-have-been-pulled-over-detained-at-gunpoint-or-jailed-due-to-ai-license-plate-camera-errors/" target="_blank" rel="noopener">Institute for Justice: dozens pulled over, held at gunpoint, or jailed over camera errors</a> <span class="muted">Includes a gunpoint stop and a police-dog attack after a "7" was misread as a "2."</span></li>
@@ -55,7 +68,7 @@
             </ul>
           </div>
 
-          <div class="card resource-card">
+          <div class="card resource-card news-sec" id="officer-misuse">
             <h2>Officer misuse</h2>
             <ul>
               <li><a href="https://www.kwch.com/2022/11/04/kechi-police-lieutenants-arrest-puts-flock-technology-under-scrutiny/" target="_blank" rel="noopener">KWCH: Kansas police lieutenant arrested, accused of using a Flock database to stalk his estranged wife</a></li>
@@ -66,7 +79,7 @@
             </ul>
           </div>
 
-          <div class="card resource-card">
+          <div class="card resource-card news-sec" id="ice-abortion">
             <h2>Shared with ICE and used against abortion seekers</h2>
             <ul>
               <li><a href="https://www.npr.org/2026/02/17/nx-s1-5612825/flock-contracts-canceled-immigration-survillance-concerns" target="_blank" rel="noopener">NPR: cities cancel Flock contracts over immigration-surveillance concerns</a></li>
@@ -77,7 +90,7 @@
             </ul>
           </div>
 
-          <div class="card resource-card">
+          <div class="card resource-card news-sec" id="legal-challenges">
             <h2>Data sharing under legal challenge (lawsuits and AG actions)</h2>
             <ul>
               <li><a href="https://stateofsurveillance.org/news/flock-safety-class-action-lawsuit-california-federal-data-sharing-2026/" target="_blank" rel="noopener">Class action: Flock shared California plate data with federal agencies 1.6 million times</a></li>
@@ -85,7 +98,7 @@
             </ul>
           </div>
 
-          <div class="card resource-card">
+          <div class="card resource-card news-sec" id="mission-creep">
             <h2>Mission creep and breaches</h2>
             <ul>
               <li><a href="https://www.eff.org/deeplinks/2026/05/more-license-plate-reader-mission-creep-school-residency-verification-background" target="_blank" rel="noopener">EFF: readers used for school-residency checks, background checks, and noise complaints</a></li>
@@ -94,14 +107,14 @@
             </ul>
           </div>
 
-          <div class="card resource-card">
+          <div class="card resource-card news-sec" id="credibility">
             <h2>The camera company's own credibility</h2>
             <ul>
               <li><a href="https://www.aclu.org/news/privacy-technology/tracking-alpr-cameras/flock-safety-credibility-lost-as-it-repeatedly-lies-to-city-councils-police-departments-and-public-across-the-country" target="_blank" rel="noopener">ACLU: Flock has repeatedly misled city councils and the public</a></li>
             </ul>
           </div>
 
-          <div class="card resource-card">
+          <div class="card resource-card news-sec" id="movement-winning">
             <h2>The movement is winning</h2>
             <ul>
               <li><a href="https://stateofsurveillance.org/news/flock-safety-cancel-wave-30-cities-alpr-surveillance-contracts-2026/" target="_blank" rel="noopener">State of Surveillance: dozens of cities have canceled contracts, and the list keeps growing</a></li>
@@ -111,7 +124,7 @@
             </ul>
           </div>
 
-          <div class="card resource-card">
+          <div class="card resource-card news-sec" id="at-home">
             <h2>Right here at home</h2>
             <ul>
               <li><a href="https://www.fox21online.com/news/political/ashland-police-department-to-remove-flock-cameras-from-city/article_794afeda-e1e4-4762-84c0-3952d291204c.html" target="_blank" rel="noopener">Fox21: Ashland Police Department to remove Flock cameras from the city</a> <span class="muted">Our local proof it can be beaten.</span></li>
@@ -129,11 +142,11 @@
     <div class="container">
       <div class="footer-cols">
         <div>
-          <h3>Keep the Northwoods FLOCK Free</h3>
+          <h3 class="foot-brand">Keep the Northwoods <span>FLOCK Free</span></h3>
           <p>Neighbors in northern Wisconsin against mass license-plate surveillance, working to reach the rest of the Northwoods. Not a party. Not anti-police. For a public vote and real rules.</p>
         </div>
         <nav aria-label="Footer">
-          <h3>Pages</h3>
+          <h3 class="foot-col-head">Pages</h3>
           <a href="the-issue.html">The Issue</a>
           <a href="areas.html">Where We're Fighting</a>
           <a href="how-we-win.html">How We Win</a>
@@ -142,7 +155,7 @@
           <a href="about.html">About &amp; Contact</a>
         </nav>
         <div>
-          <h3>More</h3>
+          <h3 class="foot-col-head">More</h3>
           <a href="take-action.html">Take Action</a>
           <a href="downloads.html">Downloads</a>
           <a href="resources.html">Learn more</a>

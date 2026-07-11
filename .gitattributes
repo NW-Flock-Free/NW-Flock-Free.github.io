@@ -1,0 +1,14 @@
+# Normalize line endings: store text as LF in the repo, on every platform.
+* text=auto eol=lf
+
+# Explicit text types (served as-is by GitHub Pages)
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.svg   text eol=lf
+*.xml   text eol=lf
+*.txt   text eol=lf
+
+# Binary assets — never touch line endings
+*.png   binary
+*.pdf   binary

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap: add the full URL once the domain is live, e.g.
-# Sitemap: https://YOURDOMAIN/sitemap.xml
+Sitemap: https://northwoodsflockfree.com/sitemap.xml

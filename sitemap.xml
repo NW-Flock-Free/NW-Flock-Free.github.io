@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Sitemap for search engines. Replace https://YOURDOMAIN/ with your real
-     domain once it's live (sitemaps require full absolute URLs), and update
-     robots.txt with the Sitemap: line. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://YOURDOMAIN/</loc></url>
-  <url><loc>https://YOURDOMAIN/the-issue.html</loc></url>
-  <url><loc>https://YOURDOMAIN/areas.html</loc></url>
-  <url><loc>https://YOURDOMAIN/how-we-win.html</loc></url>
-  <url><loc>https://YOURDOMAIN/take-action.html</loc></url>
-  <url><loc>https://YOURDOMAIN/news.html</loc></url>
-  <url><loc>https://YOURDOMAIN/faq.html</loc></url>
-  <url><loc>https://YOURDOMAIN/resources.html</loc></url>
-  <url><loc>https://YOURDOMAIN/downloads.html</loc></url>
-  <url><loc>https://YOURDOMAIN/about.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/</loc></url>
+  <url><loc>https://northwoodsflockfree.com/the-issue.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/areas.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/how-we-win.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/take-action.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/news.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/faq.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/resources.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/downloads.html</loc></url>
+  <url><loc>https://northwoodsflockfree.com/about.html</loc></url>
 </urlset>

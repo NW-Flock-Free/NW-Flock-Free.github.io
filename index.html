@@ -8,8 +8,10 @@
   <meta property="og:title" content="Keep the Northwoods FLOCK Free">
   <meta property="og:description" content="Mass license-plate surveillance is spreading across the Northwoods. No public vote. No way to opt out. Here's how we push back.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="og-card.png">
+  <meta property="og:image" content="https://northwoodsflockfree.com/og-card.png">
+  <meta property="og:url" content="https://northwoodsflockfree.com/">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://northwoodsflockfree.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700;900&family=Lato:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -61,7 +63,8 @@
     <section class="section">
       <div class="container prose">
         <h2>What is an ALPR?</h2>
-        <p>An automated license-plate reader, or ALPR, is a camera that photographs every passing vehicle and logs the plate, the make, the model, the color, the time, and the spot. Flock Safety is the biggest company selling them and it's what sits on our roads, but Motorola, Axon, and others sell the same thing. The data feeds a national network that thousands of police departments can search. You don't have to be accused of anything to be in it. Flock's network alone runs more than 20 billion plate scans a month across 5,000-plus communities.</p>
+        <p>An automated license-plate reader, or ALPR, is a camera that photographs every passing vehicle and logs the plate, the make, the model, the color, the time, and the spot. Flock Safety is the biggest company selling them and it's what sits on our roads, but Motorola, Axon, and others sell the same thing.</p>
+        <p>The data feeds a national network. Thousands of police departments can search it. You don't have to be accused of anything to be in it. Flock's network alone runs more than 20 billion plate scans a month across 5,000-plus communities.</p>
       </div>
     </section>
 
@@ -70,9 +73,9 @@
         <h2>Why you should care</h2>
         <p class="lead stack">This isn't about having something to hide. It's about who gets to track everyone, all the time, with no warrant and no public vote.</p>
         <div class="cards cards--numbered" style="margin-top:var(--s5)">
-          <div class="card"><div class="card-num-row"><span class="card-num">1</span><p class="eyebrow">Tracked anyway</p></div><h3>You did nothing wrong</h3><p>The camera can't tell a criminal from you. It logs everyone the same. You're in the file because you own a car, not because you did anything.</p></div>
-          <div class="card"><div class="card-num-row"><span class="card-num">2</span><p class="eyebrow">It travels</p></div><h3>Shared far past your town</h3><p>Your data doesn't stay local. Hundreds of departments in other states can pull it up, and it has already been searched on behalf of ICE.</p></div>
-          <div class="card"><div class="card-num-row"><span class="card-num">3</span><p class="eyebrow">No say</p></div><h3>Nobody voted</h3><p>No public vote. No way to opt out. Somebody signed a contract and the cameras went up. That should bother you no matter how you vote.</p></div>
+          <div class="card reveal" style="--i:0"><div class="card-num-row"><span class="card-num">1</span><p class="eyebrow">Tracked anyway</p></div><h3>You did nothing wrong</h3><p>The camera can't tell a criminal from you. It logs everyone the same. You're in the file because you own a car, not because you did anything.</p></div>
+          <div class="card reveal" style="--i:1"><div class="card-num-row"><span class="card-num">2</span><p class="eyebrow">It travels nationwide</p></div><h3>Shared far past your town</h3><p>Your data doesn't stay local. Hundreds of departments in other states can pull it up, and it has already been searched on behalf of ICE.</p></div>
+          <div class="card reveal" style="--i:2"><div class="card-num-row"><span class="card-num">3</span><p class="eyebrow">No say</p></div><h3>Nobody voted</h3><p>No public vote. No way to opt out. Somebody signed a contract and the cameras went up. That should bother you no matter how you vote.</p></div>
         </div>
         <p style="margin-top:var(--s4)"><a href="the-issue.html">See all nine, with sources</a></p>
       </div>
@@ -81,10 +84,10 @@
     <section class="section">
       <div class="container center">
         <h2>What one county found when it checked</h2>
-        <div class="stats" style="margin-top:var(--s4)">
-          <div class="stat"><b>100,721</b><span>vehicles logged in Bayfield County in one 30-day period</span></div>
-          <div class="stat"><b>~250</b><span>agencies in five states could see the data</span></div>
-          <div class="stat"><b>0</b><span>public votes taken before the cameras went up</span></div>
+        <div class="stats stats--gold" style="margin-top:var(--s4)">
+          <div class="stat reveal" style="--i:0"><b>100,721</b><span>vehicles logged in Bayfield County in one 30-day period</span></div>
+          <div class="stat reveal" style="--i:1"><b>~250</b><span>agencies in five states could see the data</span></div>
+          <div class="stat reveal" style="--i:2"><b>0</b><span>public votes taken before the cameras went up</span></div>
         </div>
       </div>
     </section>
@@ -103,11 +106,11 @@
     <div class="container">
       <div class="footer-cols">
         <div>
-          <h3>Keep the Northwoods FLOCK Free</h3>
+          <h3 class="foot-brand">Keep the Northwoods <span>FLOCK Free</span></h3>
           <p>Neighbors in northern Wisconsin against mass license-plate surveillance, working to reach the rest of the Northwoods. Not a party. Not anti-police. For a public vote and real rules.</p>
         </div>
         <nav aria-label="Footer">
-          <h3>Pages</h3>
+          <h3 class="foot-col-head">Pages</h3>
           <a href="the-issue.html">The Issue</a>
           <a href="areas.html">Where We're Fighting</a>
           <a href="how-we-win.html">How We Win</a>
@@ -116,7 +119,7 @@
           <a href="about.html">About &amp; Contact</a>
         </nav>
         <div>
-          <h3>More</h3>
+          <h3 class="foot-col-head">More</h3>
           <a href="take-action.html">Take Action</a>
           <a href="downloads.html">Downloads</a>
           <a href="resources.html">Learn more</a>
