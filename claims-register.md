@@ -75,6 +75,16 @@ Every list item on the news page links directly to its own source - the page is 
 
 - **"Every claim on this site traces to a public record or a reputable report"** - this file is that trace. If a claim can't get a row here, it doesn't ship.
 
+## Flyers (downloads) - claims that appear on flyers but not on a site page
+
+Added 2026-07-13 for the reworked Flock 101 (the abuse list). KB grounding: `flock-safety-and-alpr-opposition/module-04` (proven-tier items only; Aurora-style unconfirmed-Flock cases and advocacy aggregate tallies deliberately excluded). Format per `grassroots-organizing-and-protest-playbook/module-04`: three-second test, one message / one ask, recruit-don't-preach question frame, taxpayer value frame. **QR reclassification (Adam, 2026-07-13):** Flock 101 is now the campaign's RECRUITMENT flyer, so its QR points to the sign-up form (forms.gle/V1HjseDto6eLX1FW8, the approved contact-capture channel) per the grassroots module's recruitment-flyer spec ("goal: get a name") - superseding the K.3 educational-flyer site-QR rule for this one flyer. The printed URL remains northwoodsflockfree.com as the no-scan fallback. Flyer footers also restored to "A nonpartisan effort of Northwoods neighbors" alongside the as-of date ("Not anti-police" stays removed from all docs).
+
+- **"At least 18 officers have been caught using these cameras to stalk a romantic interest"** - Institute for Justice compilation (count as of April 2026) - https://ij.org/police-have-reportedly-used-license-plate-readers-to-stalk-romantic-interests-at-least-14-times-in-recent-years/ [T2] (proven as a compilation; re-check the count before any reprint)
+- **"A Texas officer searched 83,000 cameras nationwide for a woman who had an abortion"** - 404 Media (Johnson County TX logs: 6,809 networks / 83,345 cameras) - https://www.404media.co/a-texas-cop-searched-license-plate-cameras-nationwide-for-a-woman-who-got-an-abortion/ ; EFF - https://www.eff.org/deeplinks/2025/05/she-got-abortion-so-texas-cop-used-83000-cameras-track-her-down [T2]
+- **"Local police have run thousands of lookups on behalf of ICE, with no contract and no warrant"** - 404 Media (Danville IL FOIA: 4,000+ nationwide/statewide lookups for federal or immigration purposes; Flock had no ICE contract) - https://www.404media.co/ice-taps-into-nationwide-ai-enabled-camera-network-data-shows/ [T2]
+- **"A San Diego man spent about a month in jail over a misread. He was five miles away."** - Times of San Diego, 2026-06-07 - https://timesofsandiego.com/crime/2026/06/07/a-flock-license-plate-reader-linked-a-san-diego-man-to-a-violent-crime-he-was-five-miles-away/ [T2]
+- **"0 public votes ... the usual story"** - generic-flyer framing of the register-backed local rows (Bayfield and Douglas: 0 votes, county records [T1]); hedged with "usual" because some jurisdictions did vote. Not a claim that no town anywhere voted.
+
 ---
 
 ## Known inconsistencies to resolve
