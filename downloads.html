@@ -24,10 +24,11 @@
 
   <header class="site-header">
     <div class="nav">
-      <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true" focusable="false"><path d="M13 32 C 22 21, 42 21, 51 32 C 42 43, 22 43, 13 32 Z" fill="none" stroke="#e8aa30" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="32" r="7.5" fill="#e8aa30"/><circle cx="32" cy="32" r="3.4" fill="#113a2c"/><line x1="17" y1="47" x2="47" y2="17" stroke="#113a2c" stroke-width="10" stroke-linecap="round"/><line x1="17" y1="47" x2="47" y2="17" stroke="#e8aa30" stroke-width="5" stroke-linecap="round"/></svg><span class="brand-text">Keep the Northwoods <span>FLOCK Free</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-text">Keep the Northwoods <span>FLOCK Free</span></span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
       <nav class="nav-menu" id="nav-menu" aria-label="Main">
         <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
           <li><a href="the-issue.html">The Issue</a></li>
           <li><a href="areas.html">Where We're Fighting</a></li>
           <li><a href="how-we-win.html">How We Win</a></li>
@@ -44,12 +45,18 @@
       <div class="container">
         <h1>Downloads</h1>
         <p class="lead" style="margin-top:var(--s3)">Print them, post them online, hand them out. Preview each one below. The flyers are the current Wisconsin versions; we're building out ones for other areas, so check back or reach out for a version for your town.</p>
+        <ul class="toc" aria-label="On this page">
+          <li><a href="#print">Print flyers</a></li>
+          <li><a href="#social">Social media images</a></li>
+          <li><a href="#records">Records request</a></li>
+        </ul>
       </div>
     </section>
 
     <section class="section section--tint" style="padding-top:0">
       <div class="container">
-        <h2>Flyers and posters</h2>
+        <h2 id="print">Print flyers (8.5 x 11)</h2>
+        <p style="margin-top:var(--s3)">Letter-size PDFs made for printing and handing out. Every one also works sent as a link or an attachment.</p>
         <div class="cards cards--2col" style="margin-top:var(--s4)">
           <div class="card card--download reveal" style="--i:0">
             <a class="dl-preview" href="downloads/flock-101-onepage.png" target="_blank" rel="noopener"><img src="downloads/flock-101-onepage.png" alt="Flock 101: a two-minute plain-language explainer of what automatic license-plate reader cameras do"></a>
@@ -70,30 +77,18 @@
             <p class="dl-btn"><a class="btn btn-green" href="downloads/bayfield-turn-cameras-off.pdf" download>Download PDF</a></p>
           </div>
           <div class="card card--download reveal" style="--i:3">
-            <a class="dl-preview" href="downloads/wi-flyer-tearoff-halfsheet.png" target="_blank" rel="noopener"><img src="downloads/wi-flyer-tearoff-halfsheet.png" alt="Community-board tear-off flyer with tabs that link back to the campaign"></a>
-            <h3>Tear-off flyer</h3>
-            <p>A community-board flyer with tear-off tabs that link back to the campaign. Half-sheet, minimal ink.</p>
-            <p class="dl-btn"><a class="btn btn-green" href="downloads/wi-flyer-tearoff-halfsheet.pdf" download>Download PDF</a></p>
-          </div>
-          <div class="card card--download reveal" style="--i:4">
             <a class="dl-preview" href="downloads/douglas-findings-card.png" target="_blank" rel="noopener"><img src="downloads/douglas-findings-card.png" alt="Douglas County findings: what the records request revealed about the Superior-area cameras"></a>
             <h3>Douglas County findings</h3>
             <p>What a records request turned up about the Superior-area camera network. A one-page handout for Douglas County.</p>
             <p class="dl-btn"><a class="btn btn-green" href="downloads/douglas-county-findings-one-pager.pdf" download>Download PDF</a></p>
           </div>
-          <div class="card card--download reveal" style="--i:5">
-            <a class="dl-preview" href="downloads/bayfield-surveillance-poster.png" target="_blank" rel="noopener"><img src="downloads/bayfield-surveillance-poster.png" alt="Bayfield County poster: 100,721 cars logged in a month, 8 cameras, plates shared with about 250 agencies across five states, and 0 public votes"></a>
-            <h3>Bayfield County poster</h3>
-            <p>A full-page poster for bulletin boards and windows. The county's own camera numbers, the fall renewal, and how to get involved.</p>
-            <p class="dl-btn"><a class="btn btn-green" href="downloads/bayfield-surveillance-poster.png" download>Download image</a></p>
-          </div>
-          <div class="card card--download reveal" style="--i:6">
+          <div class="card card--download reveal" style="--i:4">
             <a class="dl-preview" href="downloads/why-we-care-final.png" target="_blank" rel="noopener"><img src="downloads/why-we-care-final.png" alt="Two-sided flyer, front: why we care. 8 cameras logging cars across Bayfield County, about 250 agencies in five states, 100,721 cars logged in a month in a county of about 16,000, and zero public votes"></a>
             <h3>Why we care (two-sided, front)</h3>
             <p>The front of a two-sided handout: the Bayfield County camera facts and why a public vote matters. Prints double-sided with "How we fight back."</p>
             <p class="dl-btn"><a class="btn btn-green" href="downloads/why-we-care-final.pdf" download>Download PDF</a></p>
           </div>
-          <div class="card card--download reveal" style="--i:7">
+          <div class="card card--download reveal" style="--i:5">
             <a class="dl-preview" href="downloads/how-we-fight-back-final.png" target="_blank" rel="noopener"><img src="downloads/how-we-fight-back-final.png" alt="Two-sided flyer, back: how we fight back. A five-step plan to get on the list, file records requests, find allies, build pressure at the fall renewal, and outlast the cameras"></a>
             <h3>How we fight back (two-sided, back)</h3>
             <p>The back of the same handout: a five-step plan to turn the cameras off, and the Wisconsin towns that already have.</p>
@@ -101,24 +96,24 @@
           </div>
         </div>
 
-        <h2 style="margin-top:var(--s6)">Social media cards</h2>
-        <p style="margin-top:var(--s3)">Share-ready cards sized for Facebook and Instagram. Post one, add it to a story, or send it to a neighbor.</p>
+        <h2 id="social" style="margin-top:var(--s6)">Social media images</h2>
+        <p style="margin-top:var(--s3)">Share-ready images sized for Facebook and Instagram. Post one, add it to a story, or send it to a neighbor. Spreading these is one of the most useful things you can do from your couch.</p>
         <div class="cards cards--2col" style="margin-top:var(--s4)">
           <div class="card card--download reveal" style="--i:0">
             <a class="dl-preview" href="downloads/douglas-mobile.png" target="_blank" rel="noopener"><img src="downloads/douglas-mobile.png" alt="Social card: Douglas County is under surveillance - 19 cameras, 9 locations, 0 public votes"></a>
-            <h3>Douglas County card</h3>
+            <h3>Douglas County social image</h3>
             <p>The Superior-area facts in one share-ready image: 19 cameras on a free trial no one voted on, with plates searchable from four states.</p>
             <p class="dl-btn"><a class="btn btn-green" href="downloads/douglas-mobile.png" download>Download image</a></p>
           </div>
           <div class="card card--download reveal" style="--i:1">
             <a class="dl-preview" href="downloads/bayfield-mobile.png" target="_blank" rel="noopener"><img src="downloads/bayfield-mobile.png" alt="Social card: Bayfield County is under surveillance - 100,721 cars logged a month, 8 cameras, 0 public votes"></a>
-            <h3>Bayfield County card</h3>
+            <h3>Bayfield County social image</h3>
             <p>Bayfield's numbers in one share-ready image: 100,721 cars logged in a month in a county of about 16,000, on a contract no one voted on.</p>
             <p class="dl-btn"><a class="btn btn-green" href="downloads/bayfield-mobile.png" download>Download image</a></p>
           </div>
         </div>
 
-        <h2 style="margin-top:var(--s6)">File a records request</h2>
+        <h2 id="records" style="margin-top:var(--s6)">File a records request</h2>
         <div class="card card--download reveal" style="max-width:24rem;margin-top:var(--s4)">
           <a class="dl-preview" href="downloads/wi-records-request-onepager.png" target="_blank" rel="noopener"><img src="downloads/wi-records-request-onepager.png" alt="Records-request one-pager with what to ask for and an example request"></a>
           <h3>Records-request one-pager</h3>
@@ -126,8 +121,8 @@
           <p class="dl-btn"><a class="btn btn-green" href="downloads/wi-records-request-onepager.pdf" download>Download PDF</a></p>
         </div>
 
-        <div class="callout info" style="margin-top:var(--s6)">
-          <p>Records law is different in every state. These are written for Wisconsin. If you're in Michigan or Minnesota, <a href="about.html">reach out</a> and we'll help you get the right version for where you live.</p>
+        <div class="callout" style="margin-top:var(--s6)">
+          <p>Records law is different in every state. These are written for Wisconsin. If you're in Michigan or Minnesota, <a href="about.html#contact">reach out</a> and we'll help you get the right version for where you live.</p>
         </div>
       </div>
     </section>
@@ -147,7 +142,7 @@
           <a href="how-we-win.html">How We Win</a>
           <a href="news.html">In the News</a>
           <a href="faq.html">FAQ</a>
-          <a href="about.html">About &amp; Contact</a>
+          <a href="about.html">Contact &amp; About</a>
         </nav>
         <div>
           <h3 class="foot-col-head">More</h3>

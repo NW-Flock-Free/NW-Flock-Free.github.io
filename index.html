@@ -24,10 +24,11 @@
 
   <header class="site-header">
     <div class="nav">
-      <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true" focusable="false"><path d="M13 32 C 22 21, 42 21, 51 32 C 42 43, 22 43, 13 32 Z" fill="none" stroke="#e8aa30" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="32" r="7.5" fill="#e8aa30"/><circle cx="32" cy="32" r="3.4" fill="#113a2c"/><line x1="17" y1="47" x2="47" y2="17" stroke="#113a2c" stroke-width="10" stroke-linecap="round"/><line x1="17" y1="47" x2="47" y2="17" stroke="#e8aa30" stroke-width="5" stroke-linecap="round"/></svg><span class="brand-text">Keep the Northwoods <span>FLOCK Free</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-text">Keep the Northwoods <span>FLOCK Free</span></span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
       <nav class="nav-menu" id="nav-menu" aria-label="Main">
         <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="the-issue.html">The Issue</a></li>
           <li><a href="areas.html">Where We're Fighting</a></li>
           <li><a href="how-we-win.html">How We Win</a></li>
@@ -42,17 +43,13 @@
   <main id="main">
     <section class="hero hero--dark">
       <div class="container">
-        <svg class="hero-mark" viewBox="0 0 64 64" width="56" height="56" aria-hidden="true" focusable="false">
-          <path d="M13 32 C 22 21, 42 21, 51 32 C 42 43, 22 43, 13 32 Z" fill="none" stroke="#e8aa30" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="32" cy="32" r="7.5" fill="#e8aa30"/>
-          <circle cx="32" cy="32" r="3.4" fill="#113a2c"/>
-          <line x1="17" y1="47" x2="47" y2="17" stroke="#113a2c" stroke-width="10" stroke-linecap="round"/>
-          <line x1="17" y1="47" x2="47" y2="17" stroke="#e8aa30" stroke-width="5" stroke-linecap="round"/>
-        </svg>
         <p class="kicker">Stopping AI-powered license-plate surveillance</p>
         <h1>A camera just logged your car. <span class="accent">You weren't suspected of anything.</span></h1>
+        <!-- Real photo: the solar-powered Flock camera on US-63 in Cable, Bayfield County. -->
+        <img class="hero-photo" src="images/flock-camera-cable-hero.jpg" width="760" height="874" alt="A solar-powered Flock license-plate camera on a roadside pole along US-63 in Cable, Wisconsin, next to the American Birkebeiner Trail sign">
+        <p class="hero-cap">This one is on US-63 in Cable, Bayfield County. It logs every car that passes.</p>
         <p class="hero-tagline" style="max-width:42ch;margin:0 auto var(--s4);font-size:1.4rem;font-weight:800;line-height:1.28;color:#fff">Get corporate public surveillance <span style="color:var(--gold)">OUT</span> of the Northwoods, the last stronghold of privacy in the Midwest.</p>
-        <p class="hero-stat"><span style="color:var(--gold)">100,721 vehicles</span> logged in one 30-day period in Bayfield County, <span style="color:var(--gold)">a county of about 16,000</span>. No public vote. No way to opt out.</p>
+        <p class="hero-stat"><span style="color:var(--gold);font-weight:800">100,721 vehicles</span> logged in one 30-day period in Bayfield County, <span style="color:var(--gold);font-weight:800">a county of about 16,000</span>. No public vote. No way to opt out.</p>
         <div class="actions">
           <a class="btn btn-primary" href="take-action.html">Take action</a>
           <a class="btn btn-outline" href="areas.html">See where they are</a>
@@ -62,9 +59,12 @@
 
     <section class="section">
       <div class="container prose">
-        <h2>What is an ALPR?</h2>
+        <h2>What are Flock cameras and ALPRs?</h2>
         <p>An automated license-plate reader, or ALPR, is a camera that photographs every passing vehicle and logs the plate, the make, the model, the color, the time, and the spot. Flock Safety is the biggest company selling them and it's what sits on our roads, but Motorola, Axon, and others sell the same thing.</p>
         <p>The data feeds a national network. Thousands of police departments can search it. You don't have to be accused of anything to be in it. Flock's network alone runs more than 20 billion plate scans a month across 5,000-plus communities.</p>
+        <div class="callout info" style="margin-top:var(--s4)">
+          <p><b>New to all this?</b> Start with the <a href="faq.html">FAQ</a>. It answers the questions people actually ask - "isn't this just for catching criminals?", "can I opt out?" - straight, with sources.</p>
+        </div>
       </div>
     </section>
 
@@ -87,17 +87,17 @@
         <div class="stats stats--gold" style="margin-top:var(--s4)">
           <div class="stat reveal" style="--i:0"><b>100,721</b><span>vehicles logged in Bayfield County in one 30-day period</span></div>
           <div class="stat reveal" style="--i:1"><b>~250</b><span>agencies in five states could see the data</span></div>
-          <div class="stat reveal" style="--i:2"><b>0</b><span>public votes taken before the cameras went up</span></div>
+          <div class="stat stat--red reveal" style="--i:2"><b>0</b><span>public votes taken before the cameras went up</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Closing CTA. To update the next decision point, edit the date on the line below. -->
+    <!-- Closing CTA. Kept general on purpose: the fight spans multiple towns and counties. -->
     <section class="section cta-band">
       <div class="container">
-        <p class="cta-next">Most urgent decision point: Bayfield County's contract, this fall. It's not the only one coming.</p>
+        <p class="cta-next">This fight is live in towns and counties across the Northwoods. <a href="areas.html">See where we're fighting</a>.</p>
         <h2>These cameras are up in our own backyard. Here's how we take them back out.</h2>
-        <a class="btn btn-primary" href="take-action.html">Get involved before it renews</a>
+        <a class="btn btn-primary" href="take-action.html">Get involved</a>
       </div>
     </section>
   </main>
@@ -116,7 +116,7 @@
           <a href="how-we-win.html">How We Win</a>
           <a href="news.html">In the News</a>
           <a href="faq.html">FAQ</a>
-          <a href="about.html">About &amp; Contact</a>
+          <a href="about.html">Contact &amp; About</a>
         </nav>
         <div>
           <h3 class="foot-col-head">More</h3>

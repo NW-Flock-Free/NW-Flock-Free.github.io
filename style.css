@@ -17,6 +17,7 @@
   --gold:      #e8aa30;   /* accent, the "take action" pop - graphics + dark bg only */
   --gold-deep: #8a6200;   /* gold TEXT on light backgrounds (AA: 5.4:1). Never use #e8aa30 as text on white/tint. */
   --gold-ink:  #1a2622;
+  --red:       #b3261e;   /* alert red - the "0 public votes" zero (AA on white: 5.9:1) */
 
   /* spacing scale (4/8 based) */
   --s1: .25rem; --s2: .5rem; --s3: 1rem; --s4: 1.5rem;
@@ -33,7 +34,7 @@ body, h1, h2, h3, p, ul, ol, figure { margin: 0; }
 img, svg { display: block; max-width: 100%; height: auto; }
 a { color: var(--green); }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 /* keep anchored/focused things out from under the sticky header */
 :target, main :focus { scroll-margin-top: calc(var(--header-h) + 1rem); }
 
@@ -84,8 +85,7 @@ h3 { font-size: 1.2rem; }
   gap: var(--s4); height: var(--header-h);
   width: min(1240px, 100% - 2 * var(--s4)); margin-inline: auto;
 }
-.brand { display: inline-flex; align-items: center; gap: .5rem; font-weight: 900; font-size: 1.15rem; letter-spacing: .3px; color: #fff; text-decoration: none; white-space: nowrap; }
-.brand-mark { flex: none; }
+.brand { display: inline-flex; align-items: center; gap: .5rem; font-weight: 900; font-size: 1.15rem; letter-spacing: .3px; color: #fff; text-decoration: none; white-space: nowrap; min-width: 0; }
 .brand .brand-text span { color: var(--gold); }
 .nav-links { display: flex; align-items: center; gap: var(--s2); list-style: none; padding: 0; margin: 0; }
 .nav-links a { color: #d8e5df; text-decoration: none; font-weight: 600; font-size: .95rem; padding: .5rem .7rem; border-radius: 7px; }
@@ -234,6 +234,12 @@ input:focus, textarea:focus { outline: 2px solid var(--green); outline-offset: 1
 @media (max-width: 64rem) {
   .footer-cols { grid-template-columns: 1fr; }
   .brand { font-size: 1rem; }   /* keep the longer wordmark from overflowing the mobile bar */
+  /* Mobile header fix (2026-07-12): the nowrap wordmark + Menu button overflowed
+     the bar on ~360-430px phones (Pixel), widening .nav past the viewport and
+     shoving the whole header right. Let the wordmark wrap to two tidy lines and
+     shrink slightly; clip any residual horizontal overflow at the root. */
+  .brand { white-space: normal; }
+  .brand .brand-text { font-size: .92rem; line-height: 1.18; }
 
   .nav-toggle {
     display: inline-flex; align-items: center; gap: .4rem;
@@ -328,7 +334,9 @@ input:focus, textarea:focus { outline: 2px solid var(--green); outline-offset: 1
 }
 
 /* --- faq.html: gold-when-open + rotating +/x marker + smooth open --- */
-summary { list-style: none; position: relative; padding-right: 2rem; }
+/* No blue tap-flash on mobile: kill the default Android/iOS tap highlight on
+   the FAQ questions. The gold open-state text color below still signals the tap. */
+summary { list-style: none; position: relative; padding-right: 2rem; -webkit-tap-highlight-color: transparent; }
 summary::-webkit-details-marker { display: none; }
 summary::after {
   content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
@@ -342,8 +350,21 @@ details[open] .faq-ans { grid-template-rows: 1fr; }
 .faq-ans-inner { overflow: hidden; }
 .faq-ans-inner p { padding-bottom: var(--s3); margin: 0; }
 
-/* --- index.html: gold stat numbers on light cards (use deep gold for AA) --- */
-.stats--gold .stat b { color: var(--gold-deep); }
+/* --- index.html: stat numbers - green for the counts, red for the zero --- */
+.stats--gold .stat b { color: var(--green); }
+.stat--red b { color: var(--red); }
+
+/* --- index.html: real camera photo in the hero (US-63, Cable) --- */
+.hero-photo { width: min(380px, 88vw); margin: 0 auto var(--s3); border-radius: 12px; border: 3px solid rgba(255,255,255,.18); box-shadow: 0 12px 30px rgba(0,0,0,.3); }
+.hero .hero-cap { font-size: .85rem; color: #dce8de; margin: 0 auto var(--s4); }
+
+/* --- real-photo figures (areas, about) --- */
+.photo-figure { margin: var(--s4) 0 0; }
+.photo-figure img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+.photo-figure figcaption { font-size: .88rem; color: var(--muted); margin-top: var(--s2); }
+
+/* --- cta band: readable inline links on the green band --- */
+.cta-band a:not(.btn) { color: #fff; font-weight: 700; text-decoration-color: var(--gold); text-underline-offset: 3px; }
 
 /* --- footer gold accents (shared footer, all pages) --- */
 .site-footer .foot-brand span { color: var(--gold); }
