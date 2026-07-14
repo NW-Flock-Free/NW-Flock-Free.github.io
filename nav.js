@@ -85,3 +85,17 @@ document.documentElement.classList.add("js");
     if (sec) spy.observe(sec);
   });
 })();
+
+// -----------------------------------------------------------------------
+// Privacy-friendly analytics: GoatCounter. No cookies, no personal data,
+// no consent banner needed. Dashboard: https://nwflockfree.goatcounter.com
+// Skip your own visits: load https://northwoodsflockfree.com#toggle-goatcounter
+// once per browser (also linked in your GoatCounter settings).
+// -----------------------------------------------------------------------
+(function () {
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "//gc.zgo.at/count.js";
+  s.setAttribute("data-goatcounter", "https://nwflockfree.goatcounter.com/count");
+  document.head.appendChild(s);
+})();
