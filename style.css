@@ -177,6 +177,8 @@ h3 { font-size: 1.2rem; }
 
 /* --- pill / tag --- */
 .pill { display: inline-block; background: var(--tint); color: var(--green); font-weight: 700; font-size: .8rem; padding: .3rem .8rem; border-radius: 20px; }
+/* "unverified" tag: for DeFlock/community-reported claims, not records. Dark gold on cream keeps AA contrast (gold-contrast rule). */
+.tag-unverified { display: inline-block; font-size: .66rem; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: #8a6200; background: #faf3e2; border: 1px solid #e5d2a8; padding: .06rem .4rem; border-radius: 5px; vertical-align: middle; white-space: nowrap; }
 
 /* --- tabs (used on the "where we're fighting" page, one real page) --- */
 .tablist { display: flex; flex-wrap: wrap; gap: var(--s2); margin-block: var(--s4); }
@@ -189,12 +191,6 @@ h3 { font-size: 1.2rem; }
 .panel-field { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .panel-field .pf-bar { background: var(--green); color: #fff; font-weight: 700; font-size: .72rem; letter-spacing: 1.5px; text-transform: uppercase; padding: .55rem .9rem; }
 .panel-field .pf-body { padding: .7rem .9rem; }
-
-/* --- news list --- */
-.news h2 { border-bottom: 2px solid var(--line); padding-bottom: var(--s2); margin-top: var(--s6); }
-.news ul { list-style: none; padding: 0; }
-.news li { padding: var(--s2) 0; border-bottom: 1px solid var(--line); }
-.news li a { font-weight: 700; }
 
 /* --- resource cards (learn more page): one topic per card --- */
 .resource-card h2 { font-size: 1.3rem; margin-bottom: var(--s3); }
@@ -219,7 +215,7 @@ input:focus, textarea:focus { outline: 2px solid var(--green); outline-offset: 1
 /* --- footer --- */
 .site-footer { background: var(--green-dk); color: #cfe0d8; padding-block: var(--s6) var(--s5); margin-top: var(--s7); }
 .footer-cols { display: grid; gap: var(--s5); grid-template-columns: 2fr 1fr 1fr; }
-.site-footer h3 { color: #fff; font-size: 1rem; margin-bottom: var(--s2); }
+.site-footer h2 { color: #fff; font-size: 1rem; font-family: "Lato", system-ui, sans-serif; margin-bottom: var(--s2); }
 .site-footer a { color: #cfe0d8; text-decoration: none; display: block; padding: .2rem 0; font-size: .95rem; }
 .site-footer a:hover { color: #fff; }
 .footer-legal { margin-top: var(--s4); padding-top: var(--s3); border-top: 1px solid rgba(255,255,255,.15); font-size: .82rem; color: #9db5aa; }

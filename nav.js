@@ -58,8 +58,9 @@ document.documentElement.classList.add("js");
   items.forEach(function (el) { io.observe(el); });
 })();
 
-// (4) Optional news TOC scroll-spy. Marks the active pill as sections pass the
-// top. Only runs when a .toc exists and IntersectionObserver is supported;
+// (4) Optional news TOC scroll-spy. Marks the active pill for the section
+// currently in the top 30% of the viewport (so a jumped-to anchor lands
+// inside the active band and its own pill lights up). Only runs when a .toc exists and IntersectionObserver is supported;
 // otherwise the pills are still plain working anchor links.
 (function () {
   var toc = document.querySelector(".toc");
@@ -78,7 +79,7 @@ document.documentElement.classList.add("js");
         if (active) active.setAttribute("aria-current", "true");
       }
     });
-  }, { rootMargin: "-30% 0px -60% 0px", threshold: 0 });
+  }, { rootMargin: "0px 0px -70% 0px", threshold: 0 });
 
   Object.keys(byId).forEach(function (id) {
     var sec = document.getElementById(id);
