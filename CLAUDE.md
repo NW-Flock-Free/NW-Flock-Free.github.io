@@ -27,9 +27,22 @@ This file auto-loads in every Claude Code / Cowork session that touches this rep
 - Flyer QR codes point to **https://northwoodsflockfree.com/** (the site), not the Facebook group. Sign-up QRs (forms.gle) are the exception and stay.
 - Douglas materials must show 19 cameras / 9 locations (older 12-cam renders are dead - never reuse).
 
-## Git
+## Branching (main is protected - PR only)
 
-- Adam pushes from the Code tab himself. If you are a Cowork session: do NOT run git; hand Adam a changed-file list + commit message.
-- If you are a Claude Code session Adam asked to commit: stage explicit paths, plain `git push` on `main`.
+`main` is protected: direct pushes are rejected. **Never run `git push origin main`.**
 
-<!-- EOF -->
+1. `git checkout main && git pull origin main` - start from an up-to-date main
+2. `git checkout -b <type>/<slug>` - branch BEFORE staging, so local `main` never diverges
+3. edit, then `git add -- <explicit paths>` - never `git add -A`
+4. `git commit -m "<message>"`
+5. `git push -u origin <branch>`
+6. `gh pr create --base main --fill`
+7. `gh pr checks <branch> --watch` - wait for the required checks
+8. `gh pr merge <branch> --squash --delete-branch`
+9. `git checkout main && git pull origin main`
+
+Never merge while a required check is failing or pending, and never disable a check to
+force a merge through - stop and report instead.
+
+If you are a Cowork session: do NOT run git at all. Hand Adam a changed-file list, a commit
+message, and a paste-ready Claude Code prompt that performs the branch/PR flow above.
