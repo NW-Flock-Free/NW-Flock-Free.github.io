@@ -11,4 +11,7 @@
 
 # Binary assets — never touch line endings
 *.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
 *.pdf   binary
