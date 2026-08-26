@@ -209,9 +209,9 @@ Four more curated links, added to the working tree on 2026-08-17 and published. 
 
 ⏳ **Pending Adam's decision, not published:** six verified items (three from 2026-08-10, three from 2026-08-17) that fit no existing theme, all of the form "a legislature or council is moving to limit this." A ninth section, "Lawmakers and councils are demanding limits," is recommended in both run logs. No register rows are written for them until the section is approved. **Updated 2026-08-24: now seven.** See the 2026-08-24 section below.
 
-## news.html - weekly refresh (staged 2026-08-24, NOT yet published as of this writing)
+## news.html - weekly refresh (staged 2026-08-24, published 2026-08-26, commit 4c5d751)
 
-⚠ **Confirm publication state against git, never against this heading.** The 2026-08-10 and 2026-08-17 headings both went stale and both recorded the same lesson. As of 2026-08-24 the three items below are in the working tree at `C:\Users\Adam\source\repos\NW-Flock-Free.github.io\news.html` and **uncommitted**. When Adam pushes, update this heading to "published 2026-08-24" with the commit hash.
+⚠ **Confirm publication state against git, never against this heading.** The 2026-08-10 and 2026-08-17 headings both went stale and both recorded the same lesson. Re-confirmed against git on 2026-08-26: all three items are in `news.html` on `main` at commit `4c5d751`, pushed to `origin/main` the same day. Staged 2026-08-24, published 2026-08-26 - the two-day gap is recorded deliberately rather than collapsed into a single date. The commit was made on `fix/claims-register-compliance` and reached `main` by fast-forward, which also published `20a07bc`.
 
 Three curated links. Every URL below was fetched and read in full on 2026-08-24; each figure, quote, name and date was read off the live page, not a search snippet. Full run log, including ten rejected candidates with reasons: `Community Outreach/outputs/2026/08/news-refresh-2026-08-24.md`.
 
