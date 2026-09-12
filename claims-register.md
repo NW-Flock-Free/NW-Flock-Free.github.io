@@ -8,7 +8,7 @@
 
 **Companion file:** the deeper receipts drawer with fact-discipline rules lives at `Community Outreach/Flock/news-receipts-links.md` (working folder, not published).
 
-**Last updated:** 2026-08-23
+**Last updated:** 2026-09-12
 
 **Public link:** this file is now linked from the site on `resources.html` ("The claims on this site, and where they come from"): https://github.com/NW-Flock-Free/NW-Flock-Free.github.io/blob/main/claims-register.md
 
@@ -119,6 +119,9 @@ Added 2026-07-13 for the reworked Flock 101 (the abuse list). KB grounding: `flo
 2. New row format: **claim as worded on the site** - source name + URL or on-file document name. [tier]
 3. If the source is a paper record, name the exact file in `Community Outreach/Flock/`.
 4. Quarterly (or before any big print run): click-check the T2 links; links rot.
+5. **Retiring a claim: list where it still lives.** When you mark a claim ⛔ RETIRED, BARRED or SUPERSEDED, add a `STILL LIVE IN:` line to that row naming every file that still carries it - site pages with line numbers, PDFs and PNGs in `downloads/`, the build script that generates them, and the working-folder copy in `Community Outreach/Flock/`. Grep for it; never do it from memory. The line stays until each file is fixed, then delete it. **An empty `STILL LIVE IN:` means the retirement is actually finished.** `grep "STILL LIVE IN" claims-register.md` is then the whole pre-publish check and the entire outstanding-defect queue, in one command.
+
+   *Why this exists:* on 2026-09-12 three claims this file had already retired were still being served publicly, one of them in indexed body copy, and a fourth had no row at all. This register knew. Nothing connected knowing to fixing. The 2026-08-23 rebuild list came closest, and it was gated on "before the next print run" - an event that may never arrive, while the files stay downloadable every day.
 
 - **Records finding published + NUL corruption repaired (2026-07-30).** The 2026-07-29 Bayfield records production reached the site. `index.html`: the stats band was re-led on cost and the video cameras ($17,500 / 2 video cameras / 0 public votes, replacing 100,721 / ~250 agencies / 0 votes), and its heading changed from "What one county found when it checked" to "What one county's own contracts turned out to say." `areas.html`: the Bayfield chips now carry $17,500 / 2 video cameras / 0 public votes; "Eight Flock cameras county-wide" became "at least eight Flock devices county-wide, and two of them are video cameras"; a new dated, linkable block `#bayfield-records` carries the three-agreement finding with Flock's own capability quotes and Flock's own rebuttal; and "Who decides" was rewritten off the unsupportable "the contract renews this fall" onto the Wis. Stat. 65.90 budget hearing plus the Sept 29 board meeting. Every new claim has a row above. **Also repaired, unrelated to content:** ten of eleven HTML files carried trailing NUL-byte padding committed to the repo (404 518 bytes, downloads 1431, faq/how-we-win/news/resources/the-issue 509 each, index 310, areas 53, about 9). All content was intact and `</html>` present in every file, no interior NULs, so the strip is lossless and no rendering was affected. Cause is a known shortening-edit corruption pattern, not a content problem. `take-action.html` was already clean.
 
@@ -281,6 +284,8 @@ All shipped PDFs are single-page rasterized images with no extractable text laye
 - ✅ **`how-we-fight-back-final.pdf`, `wi-records-request-onepager.pdf`, `mi-records-request-onepager.pdf`** - no retired or barred claim identified. The records one-pagers carry statutory cites only.
 - ⚠ **Every shipped artifact prints an as-of date of "July 2026."** Per the 2026-07-12 note above, a stale as-of date is itself a claim. Update the date string in the build scripts at the same time as the figures.
 
+- ✅ **RESOLVED 2026-09-12 for the two mobile cards only.** `bayfield-mobile.png` and `douglas-mobile.png` were rebuilt in place and are clean; see the 2026-09-12 section at the end of this file. ⛔ **Still outstanding from this list:** `bayfield-who-is-watching.pdf` / `.png`, `douglas-county-findings-one-pager.pdf` / `.png`, and `flock-101-onepage.pdf` / `.png`. Those three sets still carry retired or barred claims and still must not be reprinted or reshared.
+
 **Also flag, not a claims issue:** `/downloads` exists both as a page (`downloads.html`) and as a directory (`downloads/`), and the nav plus `sitemap.xml` use the extensionless `/downloads`. Served locally that resolves to the directory and 404s. GitHub Pages may resolve it differently. **This needs a manual check against the live site** - it was not verified here, and it must not be asserted as broken without that check.
 
 ## Standing wording defect - status as of 2026-08-23
@@ -290,5 +295,39 @@ The unverified-absolute-negative rule (2026-07-30, recorded at the 2026-07-31 en
 ⚠ **STILL UNRESOLVED, and still Adam's decision, unchanged from 2026-07-31.** Nine instances of the signature frame remain, and they were deliberately left alone because sweeping them is a voice decision and not a mechanical fix: `index.html` meta description, `og:description`, hero stat line and section lead; `the-issue.html` meta description and section lead; `about.html`, `faq.html` and `how-we-win.html` body copy. All nine are the "No public vote. No way to opt out." pairing, which `community-outreach-voice.md` records as one of Adam's own frames. **Do not sweep them without asking him.**
 
 ⚠ **The Douglas "no vote" half is still undocumented**, exactly as flagged on 2026-07-31. The Douglas row in the `areas.html` section above cites three Flock records, not board minutes - the same category error that made the Bayfield citation false. The page copy is now in the finding form ("we have found no record that any public body voted on it"), which is honest, but **the question still has to be put to Hultstrom or the Douglas County Clerk** before it goes in a leave-behind.
+
+## Mobile social cards rebuilt, areas.html caption corrected (published 2026-09-12, PR #4, commit 6b730b9)
+
+⛔ **The rebuild flagged on 2026-08-23 had not happened, and the flagged list was not the whole list.** The `downloads/` section above recorded both mobile cards as needing rebuild "before any reprint or reshare." They stayed downloadable and reshareable from `downloads.html` for three more weeks. A sweep on 2026-09-12 rebuilt both, and found a third defect the list did not name.
+
+**The third defect, in indexed body copy.** `areas.html` carried a photo caption reading **"One of Bayfield County's eight cameras: US-63 in Cable."** That is a flat device total, which the `index.html` row above bars until Sheriff Williams answers the portal-counting question. Line 92 of the same file already read "At least eight Flock devices county-wide," so the page contradicted itself, and the caption is the version search engines index. ⚠ **This register's own `areas.html` photo row pointed at a superseded source:** it read "'Eight cameras' per the row above," and the row above had since been replaced by the "at least eight" wording. **A retirement did not propagate to the rows that cite it.** That is the gap rule 5 in "How to update this file" now exists to close. ✅ The caption now reads "One of Bayfield County's Flock cameras: US-63 in Cable, quietly logging every car through town." The count is removed, not softened - no per-photo device total is publishable.
+
+**`bayfield-mobile.png`, rebuilt in place.** Same filename, 1080x1350, template, palette and QR. Removed, and why:
+- "The contract auto-renews unless the county acts to stop it," plus both CTA lines built on it - **SUPERSEDED 2026-07-30**, and affirmatively contradicted by `areas.html`, which tells readers Bayfield's plate readers are not up for renewal this fall. A flyer and the site contradicting each other is the exact failure this register exists to prevent.
+- "8 / cameras" - the barred flat device total.
+- "100,721 / cars logged / month" - a window-scoped figure served as a rate, which the 100,721 row forbids.
+- "0 public votes" - the conclusion form retired 2026-07-31.
+- "You got no say. The cameras just went up." - unverified absolute negative.
+
+Now carries, every line tracing to a row above: 100,721 cars logged in 30 days / "one portal read, June 2026" · 8+ Flock devices / county-wide (rendering the approved "at least eight") · $17,500 a year / three agreements · **0 records of a public vote**, "In anything Bayfield County has produced." The CTA is replaced with the budget lever the site itself moved to on 2026-07-30: "The Board's lever is the budget, not the cameras. / Wisconsin requires a public budget hearing each year."
+
+**`douglas-mobile.png`, rebuilt in place.** Removed:
+- **"4 / states can search" - this claim had NO ROW ANYWHERE IN THIS FILE.** "4 states" sits on the list of claims **dropped for lack of a register row** in the 2026-07-11 two-sided-WI rebuild note above, and it survived in this artifact for two months. ⛔ **Do not restore it.** The Douglas sharing list is sourced by jurisdiction (Texas, Minnesota, Michigan, Wisconsin, tribal agencies), never by count.
+- "0 public votes" and "You got no say. The cameras just went up." - as above.
+- The "No vote" half of "No contract. No vote. Just a free trial." - it rests on Flock records rather than board minutes, per the 2026-07-31 finding. The CTA now reads "No signed contract. No money paid. Just a free trial," which is exactly what the Douglas row supports.
+
+⚠ **The Douglas stat row is now two tiles, not three.** Nothing replaced "4 states can search," because nothing in this register could. Three accurate claims beat four with one arguable.
+
+✅ Both cards now match the descriptions and alt text `downloads.html` has carried since the 2026-08-23 sweep. The as-of date moved to **September 2026** on both.
+
+**Verification method, worth reusing.** The cards were rebuilt from their existing reproducible sources, not redrawn. A control render of the *unmodified* SVGs was diffed against the shipped PNGs first, to prove the toolchain reproduced the design before any text changed; it did, with differences confined to font antialiasing. The finals were then diffed against that control: header 0 px changed, Douglas body 0 px changed, footer only the as-of date string. The QR is byte-identical to the one that shipped and still decodes to `https://forms.gle/V1HjseDto6eLX1FW8`. ⚠ **Never accept a rebuilt image on file size.** File transfers re-encode PNGs, so the byte count differs for a pixel-identical image; this caused a false alarm during the 2026-09-12 merge. Compare decoded pixels.
+
+⛔ **The build sources carried the retired claims too, and were fixed in the same pass.** `build_bayfield_mobile.py` opened by declaring the card's frame was "no public vote + auto-renew clock." Re-running either script unchanged would have restored every claim removed above. Both now carry per-line comments naming the register row each figure traces to.
+
+⛔ **A SECOND COPY OF THE OLD CARDS EXISTED, AND EVERY EARLIER SWEEP MISSED IT.** `CLAUDE.md` requires `downloads/` and the campaign working folder `Community Outreach/Flock/` to stay in sync. After the repo copies were rebuilt, the July PNGs were still sitting in that working folder. **A reprint or reshare sourced from the working folder rather than from the site would have shipped "auto-renews" and "0 public votes" again, after the fix.** Resynced 2026-09-12. ⚠ **Any future claim correction to a downloads artifact must update both copies**, which is why rule 5 above names the working folder explicitly.
+
+**Also corrected 2026-09-12, unrelated to the cards:** `news.html` carried "a Kenosha County deputy who used Flock to watch his girlfriend left the sheriff's office without being charged." True on 2026-08-18, wrong from 2026-08-20 when McGrath was charged. Flagged in the 2026-08-31 section above and served wrong for twelve days. Now reads "left the sheriff's office and was charged two days after this article ran." ⚠ The 2026-08-31 Spectrum News entry documenting the charge remains staged and unpublished by Adam's decision; this correction stands on its own and does not depend on it.
+
+⏳ **Still open, deliberately, and still Adam's call:** `areas.html` states "The contract renews automatically on September 10, 2026" in the future tense. That date has passed. No row in this file describes the post-renewal state, so writing one would be inventing a claim. **Not touched.** It needs a decision and probably a fresh question to Chief Deputy Dawson.
 
 <!-- EOF -->

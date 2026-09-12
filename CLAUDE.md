@@ -27,22 +27,43 @@ This file auto-loads in every Claude Code / Cowork session that touches this rep
 - Flyer QR codes point to **https://northwoodsflockfree.com/** (the site), not the Facebook group. Sign-up QRs (forms.gle) are the exception and stay.
 - Douglas materials must show 19 cameras / 9 locations (older 12-cam renders are dead - never reuse).
 
-## Branching (main is protected - PR only)
+## Branching (PR only - and the merge is a fast-forward)
 
-`main` is protected: direct pushes are rejected. **Never run `git push origin main`.**
+`main` has **no branch protection enabled** on GitHub as of 2026-09-12, and Adam has decided to leave it that way. A direct push would succeed. The PR flow below is therefore honor-system, and it is not optional: this is an open-records project where one wrong published number costs more than any amount of process is worth.
 
 1. `git checkout main && git pull origin main` - start from an up-to-date main
 2. `git checkout -b <type>/<slug>` - branch BEFORE staging, so local `main` never diverges
-3. edit, then `git add -- <explicit paths>` - never `git add -A`
+3. edit, then `git add -- <explicit paths>` - never `git add -A`. The working tree routinely carries unrelated in-progress edits (claims-register.md, news.html, downloads/bayfield-who-is-watching.*) that must NOT be swept into a commit. If your change touches a file that already has uncommitted work in it, `git stash push -- <that file>` first, edit, commit, then `git stash pop`.
 4. `git commit -m "<message>"`
 5. `git push -u origin <branch>`
-6. `gh pr create --base main --fill`
-7. `gh pr checks <branch> --watch` - wait for the required checks
-8. `gh pr merge <branch> --squash --delete-branch`
-9. `git checkout main && git pull origin main`
+6. `gh pr create --base main --fill`. The PR is the audit record. Wait for Adam's review, UNLESS he has already approved the change in chat (a weekly news refresh he signed off on, for example) - then merge immediately.
+7. `git checkout main && git merge --ff-only <branch> && git push origin main`
+8. `git push origin --delete <branch>` and `git branch -d <branch>`
 
-Never merge while a required check is failing or pending, and never disable a check to
-force a merge through - stop and report instead.
+**Why fast-forward and not squash.** `claims-register.md` cites commits by hash. Squash and rebase both rewrite the commit, so a hash recorded against a claim would no longer exist on `main`. Fast-forward preserves it. If `--ff-only` is refused because main moved, rebase the branch onto main and try again - never fall back to a merge commit.
 
-If you are a Cowork session: do NOT run git at all. Hand Adam a changed-file list, a commit
-message, and a paste-ready Claude Code prompt that performs the branch/PR flow above.
+This is the one sanctioned push to `main`: a fast-forward of a branch that has already been through a PR. Never push unreviewed work to `main`.
+
+No status checks are configured on this repo, so there is nothing to wait for - do not run `gh pr checks --watch`, it will hang forever. If a check is ever added: never merge while it is failing or pending, and never disable one to force a merge. Stop and report.
+
+### Pushing requires the second GitHub account
+
+Two `gh` accounts are authorized on this machine. `buildwithbaker` is the default and does **not** have push access to the NW-Flock-Free org - it fails with a 403. The repo's git identity is already Northwoods Flock Free, but `credential.helper` is `store` and the cached credential belongs to buildwithbaker, so identity and credential disagree.
+
+    gh auth switch --user NW-Flock-Free
+    git -c credential.helper= -c credential.helper="!gh auth git-credential" push -u origin <branch>
+    gh auth switch --user buildwithbaker      # leave the machine as found
+
+The `-c credential.helper=` override is required; without it `store` re-supplies the wrong cached credential even after the account switch.
+
+### Shell note
+
+The shell is PowerShell - there are no heredocs. `git commit -F - <<'MSG'` is a parser error. Write the commit message or PR body to a temp file, pass `-F` / `--body-file`, then delete the temp file.
+
+### Image acceptance
+
+Never accept a rebuilt PNG on file size. Transfers re-encode PNGs and the byte count will differ for a pixel-identical image. Compare decoded pixels instead.
+
+### If you are a Cowork session
+
+Do NOT run git at all. Hand Adam a changed-file list, a commit message, and a paste-ready Claude Code prompt that performs the flow above. (This rule was broken on 2026-09-12 by a Cowork session that ran the branch/PR flow itself. The rule stands.)
