@@ -27,6 +27,12 @@ This file auto-loads in every Claude Code / Cowork session that touches this rep
 - When a PDF changes, re-render its preview PNG on downloads.html from that PDF (consistent ~1100px width).
 - Flyer QR codes point to **https://northwoodsflockfree.com/** (the site), not the Facebook group. Sign-up QRs (forms.gle) are the exception and stay.
 - Douglas materials must show 19 cameras / 9 locations (older 12-cam renders are dead - never reuse).
+- **"In sync" does not mean byte-identical for PNGs.** Each build script writes the full-size print render (1275x1650) plus the PDF to the Flock working folder, and a 1100px preview PNG plus the same PDF to `downloads/`. PDFs match by hash; PNGs are deliberately different resolutions. Never copy the repo preview over the working-folder master - that downgrades the print original. The sync guarantee is that both came from the same render in the same run.
+- **Build scripts live in `build/` in this repo and are canonical.** A claim fix changes the script and the artifact it produces in the same commit. They are public like everything else here - read a script before committing a change to it.
+
+## Verifying a change is live
+
+The GitHub Pages CDN serves stale pages for minutes after a push. Query-string cache-busting is not enough - send no-cache headers, and confirm the deploy through the Pages API (status `built` at the expected commit) before trusting or reporting any live-site result. **A live check that contradicts `main` is a cache artifact until proven otherwise.**
 
 ## Branching (PR only - and the merge is a fast-forward)
 
