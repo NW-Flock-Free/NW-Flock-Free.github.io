@@ -10,6 +10,7 @@ This file auto-loads in every Claude Code / Cowork session that touches this rep
 - No row possible (no source) → the claim does not ship. Mark it out or ask Adam.
 - Format and tier definitions are at the top of `claims-register.md`.
 - Wording discipline: "charged" not "convicted"; "the records show" not guesses; no exaggeration - one overclaim discredits the whole site.
+- **Count published items from `git diff`, never from a heading.** claims-register.md headings describe what someone intended to stage. On 2026-09-12 a batch described as "Two curated links" shipped four, and two went live with no row. Before any publish, diff the file and enumerate what is actually being added.
 
 ## Design/content rules
 
