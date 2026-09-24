@@ -53,15 +53,15 @@ This is the one sanctioned push to `main`: a fast-forward of a branch that has a
 
 No status checks are configured on this repo, so there is nothing to wait for - do not run `gh pr checks --watch`, it will hang forever. If a check is ever added: never merge while it is failing or pending, and never disable one to force a merge. Stop and report.
 
-### Pushing requires the second GitHub account
+### Pushing runs as buildwithbaker - never switch accounts
 
-Two `gh` accounts are authorized on this machine. `buildwithbaker` is the default and does **not** have push access to the NW-Flock-Free org - it fails with a 403. The repo's git identity is already Northwoods Flock Free, but `credential.helper` is `store` and the cached credential belongs to buildwithbaker, so identity and credential disagree.
+As of 2026-09-23, `buildwithbaker` (the default `gh` account on this machine) is a **collaborator with push rights** on this repo: the API reports `push: true`, and commit `d09a0cc` was pushed as buildwithbaker. The earlier instruction to switch to the NW-Flock-Free account is retired.
 
-    gh auth switch --user NW-Flock-Free
     git -c credential.helper= -c credential.helper="!gh auth git-credential" push -u origin <branch>
-    gh auth switch --user buildwithbaker      # leave the machine as found
 
-The `-c credential.helper=` override is required; without it `store` re-supplies the wrong cached credential even after the account switch.
+The `-c credential.helper=` override is still required: `credential.helper` is `store`, and without the override it can re-supply a stale cached credential. Commits still carry the repo's Northwoods Flock Free git identity.
+
+**Agents must never run `gh auth switch`, `gh auth login` or `gh auth logout`.** If a push fails with a 403, stop and report it. Do not change accounts to get around it.
 
 ### Shell note
 
