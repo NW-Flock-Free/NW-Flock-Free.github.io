@@ -152,6 +152,16 @@ def save(img, name):
     img.save(os.path.join(REPO, name+".pdf"), "PDF", resolution=150.0)
     print("built", name)
 
+# REVISED 2026-10-16 (claims-register section "2026-10-16 downloads refresh").
+# Re-read the county's Flock portal live 2026-10-16 (page self-dated Fri Oct 16 2026):
+#   1. 100,721 (June read) -> 99,773 unique vehicles, last 30 days, page dated Oct 16, 2026.
+#   2. "~250 agencies in five states / about 25 outside Wisconsin" -> "200+ ... Wisconsin and
+#      four other states": 210 list entries (one is "Z Do not use", one [Inactive]); 22 outside
+#      WI (12 MN, 6 IL, 3 MI, 1 IN). The old ~250 / ~25 overstated the current list.
+#   3. "Plates kept 30 days" -> the portal now says 7 days.
+#   4. Green box scoped to "before the cameras went up": the Executive Committee has since
+#      acted on the Flock budget lines (Sheriff's Committee 9/28 packet, item 6C memo).
+#   5. As-of October 2026.
 def who_is_watching():
     img=Image.new("RGB",(W,H),BG); d=ImageDraw.Draw(img)
     masthead(d, "BAYFIELD COUNTY, WISCONSIN")
@@ -161,15 +171,15 @@ def who_is_watching():
     y+=10
     y=para(d, M, y, "Cameras across Bayfield County photograph and log every car that passes, including one confirmed on US-63 in Cable. You never opted in, and you cannot opt out.", SERIF(26), GREEN, W-2*M, 34)
     y+=12; d.line([(M,y),(W-M,y)], fill=GOLD, width=4); y+=30
-    statrow(d, y, "100,721", "vehicles logged in a single 30-day period", "One portal read, June 2026. In a county of about 16,000 people.", size=76); y+=168
-    statrow(d, y, "~250", "agencies in five states can search the data", "About 25 sit outside Wisconsin, and the Sheriff keeps federal access off. All of that is a setting, not a law."); y+=146
-    statrow(d, y, "8+", "Flock devices: 6 plate readers and 2 video cameras", "A plate reader reads plates. A video camera watches the people in front of it. Plates kept 30 days."); y+=150
+    statrow(d, y, "99,773", "vehicles logged in a single 30-day period", "County's Flock portal, page dated Oct 16, 2026. In a county of about 16,000 people.", size=76); y+=168
+    statrow(d, y, "200+", "agencies can search the data", "In Wisconsin and four other states, per the county's Flock portal. The Sheriff keeps federal access off. All of that is a setting, not a law."); y+=146
+    statrow(d, y, "8+", "Flock devices: 6 plate readers and 2 video cameras", "A plate reader reads plates. A video camera watches the people in front of it. The county's portal says data is kept 7 days."); y+=150
     y=callout(d, y, "\"But I have nothing to hide.\"",
               "A Kansas police lieutenant was charged with using one of these systems to stalk his estranged wife. In independent tests, as many as 1 in 10 reads come back wrong, and people have been pulled over at gunpoint over a misread plate. Sources: KWCH; Institute for Justice.",
               GREEN)
     greenbox(d, y+28, None,
-             "This is not left or right. It is whether a private, out-of-state company gets to track a whole community, with no warrant and no record of a public vote.")
-    cta(d, img, ["The facts on your county's", "cameras, and how to help:"], asof="September 2026")
+             "This is not left or right. It is whether a private, out-of-state company gets to track a whole community, with no warrant and no record of a public vote before the cameras went up.")
+    cta(d, img, ["The facts on your county's", "cameras, and how to help:"], asof="October 2026")
     save(img, "bayfield-who-is-watching")
 
 # RETIRED 2026-07-12, superseded by how-we-fight-back. Artifact lives in downloads/archive/.

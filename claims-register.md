@@ -320,6 +320,7 @@ All shipped PDFs are single-page rasterized images with no extractable text laye
 - ⚠ **Every shipped artifact prints an as-of date of "July 2026."** Per the 2026-07-12 note above, a stale as-of date is itself a claim. Update the date string in the build scripts at the same time as the figures.
 
 - ✅ **RESOLVED 2026-09-12 for the two mobile cards only.** `bayfield-mobile.png` and `douglas-mobile.png` were rebuilt in place and are clean; see the 2026-09-12 section at the end of this file. ⛔ **Still outstanding from this list:** `bayfield-who-is-watching.pdf` / `.png`, `douglas-county-findings-one-pager.pdf` / `.png`, and `flock-101-onepage.pdf` / `.png`. Those three sets still carry retired or barred claims and still must not be reprinted or reshared.
+- ✅ **UPDATED 2026-10-16.** `bayfield-who-is-watching` was rebuilt 2026-10-16 (see "2026-10-16 downloads refresh" at the end of this file). The Douglas set left the live grid 2026-10-02 (archive only). ⚠ **Still outstanding:** `flock-101-onepage` only, for the generic "0 records of a public vote ... the usual story" line, which should move to the finding form at its next rebuild.
 
 **Also flag, not a claims issue:** `/downloads` exists both as a page (`downloads.html`) and as a directory (`downloads/`), and the nav plus `sitemap.xml` use the extensionless `/downloads`. Served locally that resolves to the directory and 404s. GitHub Pages may resolve it differently. **This needs a manual check against the live site** - it was not verified here, and it must not be asserted as broken without that check.
 
@@ -432,5 +433,34 @@ Edited files: `areas.html`, `index.html`, `take-action.html`, `downloads.html`, 
 
 **Flyer still carrying a superseded framing (no build script in the repo)**
 - `downloads/how-we-fight-back-final.pdf` + `.png`: "a packed room when the contract comes up for renewal this fall" (SUPERSEDED 2026-07-30 for Bayfield). STILL LIVE IN: those two files. Needs a rebuild or retirement.
+
+## 2026-10-16 downloads refresh (commit pending)
+
+Edited: `downloads.html`, `take-action.html` (one link), `build/build_flyers_bayfield_round2.py`, this file. New: `build/build_oct27_halfsheet.py`, `downloads/oct27-washburn-halfsheet.pdf` + `.png`. Rebuilt: `downloads/bayfield-who-is-watching.pdf` + `.png`. Moved to `downloads/archive/`: `how-we-fight-back-final.pdf` + `.png`, `bayfield-mobile.png`. Every source below was read live on 2026-10-16 unless marked.
+
+**Retired from the site**
+- ⛔ RETIRED: `downloads/how-we-fight-back-final.pdf` + `.png`, moved to `downloads/archive/`. Names "the ACLU of Wisconsin" in general-audience material (Adam's branding rule); "a packed room when the contract comes up for renewal this fall" (SUPERSEDED 2026-07-30 for Bayfield); "Facts as of July 2026". No build script in the repo. STILL LIVE IN: none on the site.
+- ⛔ RETIRED: `downloads/bayfield-mobile.png`, moved to `downloads/archive/`. "0 records of a public vote / In anything Bayfield County has produced" reads wrong after the Executive Committee removed the Flock money from the 2027 budget (9/28 packet memo, item 6C, registered 2026-10-02); "100,721 ... June 2026" is four months old; the CTA line runs off the right edge. The "Social media images" section of `downloads.html` is removed with it (it held only this card), and the `take-action.html` link to `/downloads#social` now points to `/downloads#print`. STILL LIVE IN: none on the site. `build/build_bayfield_mobile.py` unchanged.
+
+**downloads/bayfield-who-is-watching (rebuilt 2026-10-16)**
+- ⛔ SUPERSEDED on this flyer: "100,721 / One portal read, June 2026", "~250 agencies in five states", "About 25 sit outside Wisconsin", "Plates kept 30 days", "Facts as of September 2026". STILL LIVE IN: `downloads/archive/` copies only, and any print already handed out.
+- **"99,773 vehicles logged in a single 30-day period ... County's Flock portal, page dated Oct 16, 2026."** - transparency.flocksafety.com/bayfield-county-wi-so, page self-dated "Last updated: Fri Oct 16 2026", "Unique Vehicles Detected ... over the last 30 days ... 99,773", read live in Chrome 2026-10-16. WINDOW-SCOPED, same rule as the 100,721 row. [T1-observation]
+- **"200+ agencies can search the data ... In Wisconsin and four other states, per the county's Flock portal."** - same read, "Sharing Network Data With" list: 210 entries, one of them the placeholder "Z Do not use" and one marked [Inactive]; 22 outside Wisconsin (12 MN, 6 IL, 3 MI, 1 IN). "WI Department of Justice" is on the list and is a state agency. [T1-observation]
+- **"The Sheriff keeps federal access off."** - unchanged claim, existing Sheriff Williams July 2026 written-statement row; no federal agency appears on the 2026-10-16 list. [T1]
+- **"The county's portal says data is kept 7 days."** - same read, "Data Retention ... 7 days". Consistent with the Sheriff's Aug 17 statement to his committee (draft minutes, 9/28 packet, registered 2026-10-02). The portal said 30 days on Oct 1 and Oct 6. [T1-observation]
+- **"8+ / Flock devices: 6 plate readers and 2 video cameras"** - unchanged, existing 2026-07-29 production row; portal "Total Cameras ... 8" on the same read. [T1]
+- **"no record of a public vote before the cameras went up"** - replaces the bare "no record of a public vote"; finding form, same records basis as the existing vote rows, scoped to installation because the Executive Committee has since acted on the Flock budget lines. [T1, finding form]
+
+**downloads/oct27-washburn-halfsheet (new, DATED: pull it from downloads/ and downloads.html after Wed Oct 28, 2026)**
+- It must never say the Oct 27 meeting is the final budget vote (the agenda posts Fri Oct 23; the vote may land Nov 10).
+- **"BAYFIELD COUNTY BOARD BUDGET MEETING" / "Tuesday October 27" / "6:00 PM CT County Board meeting, County Board Room"** - Bayfield County calendar, bayfieldcounty.wi.gov/Calendar.aspx, October 2026: "County Board Meeting, October 27, 2026, 6:00 PM - 8:00 PM @ County Board Room", read live 2026-10-16. "Budget": the county's item 6C memo in the 2026-09-28 Sheriff's Committee packet (`_09282026-3458`, re-read 2026-10-16): "the October Budget 2027 Hearing to be held on October 27." Bayfield County is in Central time. [T1]
+- **"Bayfield County Courthouse, 117 E 5th St, Washburn"** - county address on bayfieldcounty.wi.gov ("117 E 5th Street, P.O. Box 878, Washburn, WI 54891"), read 2026-10-06; the county calendar entry for the meeting carries the same street address. [T1]
+- **"Stand outside at 5:00. Walk in at 5:50." / "5:00 PM CT Stand on the E 5th St sidewalk in front of the courthouse"** - the campaign's own event (stand 5:00 to 5:50 PM CT, then walk in together), not a claim about anyone else. Washburn has no sidewalk permit; its Street Use Permit (Sec. 7-6-1) covers streets only (read 2026-10-02). [campaign event]
+- **"In September the county's Executive Committee took the Flock camera money out of the 2027 budget."** - item 6C memo, 2026-09-28 Sheriff's Committee packet (`_09282026-3458`), re-read 2026-10-16: the Executive Committee lowered the Flock lines to $25k, "then removing the $25k all together for FLOCK and redirecting those funds to vehicle mileage." Executive Committee 2027-budget meetings were 9/10, 9/14 and 9/16 (Agenda Center). [T1]
+- **"We're asking the full board to keep it out and to write a countywide policy."** - the campaign's ask. Deliberately does not claim what the Sheriff's Committee recommended. [opinion]
+- **"You don't have to speak. Sitting in the room counts."** - campaign encouragement. [opinion]
+- **"To speak, sign in with your name and your town."** - Bayfield County Clerk Lynn Divine to Adam Baker, email 2026-10-05, re-read 2026-10-16: "You do not need to do anything special to speak during Public Contact except state your name and what municipality you are from. We also have a sign-in sheet for that." [T1]
+- **QR / "A summary of what the county's records show: northwoodsflockfree.com"** - QR decodes to https://northwoodsflockfree.com/ (decoder check on the 2026-10-16 render). The site carries summaries, not records, which is what the caption says. [site]
+- "Dated Oct 16, 2026" in the footer is the date these rows were last re-verified.
 
 <!-- EOF -->
