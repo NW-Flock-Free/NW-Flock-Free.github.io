@@ -463,7 +463,7 @@ Edited: `downloads.html`, `take-action.html` (one link), `build/build_flyers_bay
 - **QR / "A summary of what the county's records show: northwoodsflockfree.com"** - QR decodes to https://northwoodsflockfree.com/ (decoder check on the 2026-10-16 render). The site carries summaries, not records, which is what the caption says. [site]
 - "Dated Oct 16, 2026" in the footer is the date these rows were last re-verified.
 
-## 2026-10-16 site accuracy sweep (commit pending)
+## 2026-10-16 site accuracy sweep (commit 54a0cef)
 
 Full read of every page on 2026-10-16 against live sources and this register. Edited: `index.html`, `take-action.html`, `areas.html`, `faq.html`, `how-we-win.html`, `the-issue.html`, `news.html`, this file. Live sources read 2026-10-16: Bayfield County WI SO Flock transparency portal (page self-dated "Last updated: Fri Oct 16 2026"), Bayfield County calendar, the 9/28 Sheriff's Committee packet memo (item 6C), Wis. Stat. 65.90 on docs.legis.wisconsin.gov.
 
