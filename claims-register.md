@@ -434,7 +434,7 @@ Edited files: `areas.html`, `index.html`, `take-action.html`, `downloads.html`, 
 **Flyer still carrying a superseded framing (no build script in the repo)**
 - `downloads/how-we-fight-back-final.pdf` + `.png`: "a packed room when the contract comes up for renewal this fall" (SUPERSEDED 2026-07-30 for Bayfield). STILL LIVE IN: those two files. Needs a rebuild or retirement.
 
-## 2026-10-16 downloads refresh (commit pending)
+## 2026-10-16 downloads refresh (commit 346d1ea)
 
 Edited: `downloads.html`, `take-action.html` (one link), `build/build_flyers_bayfield_round2.py`, this file. New: `build/build_oct27_halfsheet.py`, `downloads/oct27-washburn-halfsheet.pdf` + `.png`. Rebuilt: `downloads/bayfield-who-is-watching.pdf` + `.png`. Moved to `downloads/archive/`: `how-we-fight-back-final.pdf` + `.png`, `bayfield-mobile.png`. Every source below was read live on 2026-10-16 unless marked.
 
